@@ -7,7 +7,7 @@ export default function ProductPage({ count, onIncrement, onDecrement }) {
 
   return (
     <>
-      <section className="container flex gap-5 mt-30 h-dvh px-20">
+      <section className="container flex gap-2 lg:gap-5 mt-30 h-dvh px-5 lg:px-20">
         <div className={`left-container flex flex-wrap justify-center gap-5 ${isCartEmpty ? "w-full" : "w-[80%]"}`}>
           {items.map((product, idx) => (
             <div key={idx}>
