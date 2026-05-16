@@ -6,8 +6,8 @@ export default function Cards({ products, count, onIncrement, onDecrement }) {
 
 
   return (
-    <div className="rounded-lg flex flex-col justify-between p-2 h-84 shadow-md shadow-gray-400/50 hover:scale-105 transform duration-500 ease-in-out inset-shadow-xs inset-shadow-gray-300">
-      <div className="image-container h-64 w-52 overflow-hidden rounded-t-lg shadow-sm shadow-gray-400 border-b border-b-gray-500/50">
+    <div className="rounded-lg flex flex-col justify-between p-2 h-50 lg:h-84 shadow-md shadow-gray-400/50 hover:scale-105 transform duration-500 ease-in-out inset-shadow-xs inset-shadow-gray-300">
+      <div className="image-container h-30 lg:h-64 w-20 lg:w-52 overflow-hidden rounded-t-lg shadow-sm shadow-gray-400 border-b border-b-gray-500/50">
         <img
           src={products.Image}
           alt={products.Item}
@@ -15,16 +15,16 @@ export default function Cards({ products, count, onIncrement, onDecrement }) {
         />
       </div>
       <div className="item-details pt-3">
-        <span className="text-[9px] bg-gray-400/30 opacity-80 px-2 py-1 rounded-full font-semibold shadow-sm shadow-black/30 text-gray-600">
+        <span className="text-[6px] lg:text-[9px] bg-gray-400/30 opacity-80 px-2 py-1 rounded-full font-semibold shadow-sm shadow-black/30 text-gray-600">
           {products.Category}
         </span>
         <div className="name-cost flex justify-between items-center-safe">
-          <h1 className="font-semibold text-xl">{products.Item}</h1>
-          <p className="text-xl text-[#076633]/80 font-semibold">
+          <h1 className="font-semibold text-md lg:text-xl">{products.Item}</h1>
+          <p className="text-md lg:text-xl text-[#076633]/80 font-semibold">
             ₹{products.Price}.00
           </p>
         </div>
-        <p className="text-gray-600 text-sm font-semibold">{products.Unit}</p>
+        <p className="text-gray-600 text-xs lg:text-sm font-semibold">{products.Unit}</p>
       </div>
 
 
