@@ -7,8 +7,8 @@ export default function ProductPage({ count, onIncrement, onDecrement }) {
 
   return (
     <>
-      <section className="container flex gap-2 lg:gap-5 mt-30 h-dvh px-5 lg:px-20">
-        <div className={`left-container flex flex-wrap justify-center gap-5 ${isCartEmpty ? "w-full" : "w-[80%]"}`}>
+      <section className="container lg:flex gap-2 lg:gap-5 mt-30 h-dvh px-2 lg:px-20">
+        <div className={`left-container flex flex-wrap justify-center gap-5 lg:${isCartEmpty ? "w-full" : "w-[80%]"}`}>
           {items.map((product, idx) => (
             <div key={idx}>
               <Cards
@@ -22,7 +22,7 @@ export default function ProductPage({ count, onIncrement, onDecrement }) {
         </div>
 
         {isCartEmpty ? null : (
-            <div className="right-container sticky top-30 w-[30%] rounded-2xl p-5 max-h-fit inset-shadow-sm shadow-md shadow-gray-500">
+            <div className="right-container sticky top-30 w-full my-5 lg:w-[30%] rounded-2xl p-5 max-h-fit inset-shadow-sm shadow-md shadow-gray-500">
           <h1 className="font-semibold capitalize text-center text-2xl text-shadow-sm mb-5">cart total</h1>
           {items
             .filter((product) => count[product.id] > 0)
