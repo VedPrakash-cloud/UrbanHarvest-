@@ -29,7 +29,7 @@
     {
         "id":4,
         "Item":"Apples",
-        "Category":"Vegetables",
+        "Category":"Fruits",
         "Price":120,
         "Unit":"1 kg",
         "Stock":"In stock",
