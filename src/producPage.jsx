@@ -2,7 +2,7 @@ import items from "./data.json";
 import Cards from "./cards";
 import { useState } from "react";
 
-export default function ProductPage({ count, onIncrement, onDecrement }) {
+export default function ProductPage({ count, onIncrement, onDecrement, onCheckoutClick }) {
   const isCartEmpty =
     Object.values(count).reduce((total, qty) => total + qty, 0) === 0;
 
@@ -24,7 +24,7 @@ export default function ProductPage({ count, onIncrement, onDecrement }) {
   return (
     <>
       <section>
-        <div className="category mt-30 flex gap-1 lg:gap-2 w-[85%] mx-auto">
+        <div className="category mt-30 flex flex-wrap gap-1 lg:gap-2 w-[85%] mx-auto">
           {["All", "Vegetables", "Fruits", "Dairy", "Herbs"].map((category) => (
             <button
               key={category}
@@ -98,7 +98,9 @@ export default function ProductPage({ count, onIncrement, onDecrement }) {
                 </div>
               </div>
               <div className="checkout-button flex justify-end">
-                <button className="bg-[#076633] text-white font-semibold px-5 py-2 rounded-2xl cursor-pointer active:scale-95 shadow-md shadow-gray-700 my-5">
+                <button 
+                className="bg-[#076633] text-white font-semibold px-5 py-2 rounded-2xl cursor-pointer active:scale-95 shadow-md shadow-gray-700 my-5"
+                onClick={onCheckoutClick}>
                   Checkout
                 </button>
               </div>
