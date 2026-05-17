@@ -1,18 +1,61 @@
-# React + Vite
+🛒 Dynamic Ecommerce Cart & Checkout Modal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React + TailwindCss project. this project has a dynamic cart system that manages product count and update on real time basis. And I have add a modal on checkout that can be access via two ways either clicking on Checkout button in cart or directly clicking on cart in Navbar, it gives you more professional feel.
 
-Currently, two official plugins are available:
+Also I made sure when user fills the checkout form and place the order the modal close automatically and cart also clean itself.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔥 Features
 
-## React Compiler
+. Object-Based State Managment:- I am storing the product count not in Array but in Object {[id]: qty}, which is a faster and more cleaner way.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+. Smart Hooks:- I have handlled <dialog> tag with the help of useRef and useEffect so that backdrop effect and Esc button on keyboard works perfectly fine.
 
-Note: This will impact Vite dev & build performances.
+. Props Synchroniazation:- By using the State lifting, I have manage to get good cordination between components(Navbar, ProductPage, Modal).
 
-## Expanding the ESLint configuration
+. Validation & Safety:- I have used HTML5 so that we can use the automatic validation feature like email and 10 digit mobile number validation. Once the cart is empty user will not be able to see the checkout button also cart icon will not response(will not open modal to place the order...)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Folder Structure
+src/
+|-- App.jsx
+|-- cards.jsx
+|-- data.json
+|-- index.css
+|-- main.jsx
+|-- modal.jsx
+|-- navbar.jsx
+|-- productPage.jsx
+
+🚀 Workflow
+
+1. Adding/Removing Item
+    I have added 2 function in App.jsx handleCount & handleDecrement. when user clicks on either + button or - button then we see state change.
+    example:
+        count={
+            product_id_1: 2,
+            product_id_2: 1
+        }
+
+2. Live Cart Count
+    with the help of Javascript's reduce method Navbar's cart automatically update the cart count automatically.
+    (const totalCount = Object.values(cart).reduce((number, qty)=> number + qty,0);)
+
+3. Center locking of Modal
+    when totalCount > 0 and user click's on checkout or cart icon a beautiful modal opens up and with the help of Tailwindcss it sticks in center.
+
+4. The main Magic
+    As soon as the user fills the place order form and click on Place order, modal triggers the onOrderPlace() function which awake the handleOrderPlaced in App.jsx which perform these functions,
+    
+    1. Clean the Cart automatically.
+    2. Close the Modal and render the product page
+    3. Clean the form for the next order.
+
+📦 How to Start?
+    First thing first! Install the dependencies by running
+      --npm Install
+    
+    and then start the project
+      --npm run dev
+
+
+Made with ❤️ by a learner...
+
