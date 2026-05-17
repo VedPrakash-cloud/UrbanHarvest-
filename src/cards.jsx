@@ -7,7 +7,7 @@ export default function Cards({ products, count, onIncrement, onDecrement }) {
 
   return (
     <div className="rounded-lg flex flex-col justify-between p-2 h-84 shadow-md shadow-gray-400/50 lg:hover:scale-105 transform duration-500 ease-in-out inset-shadow-xs inset-shadow-gray-300">
-      <div className="image-container h-64 w-40 lg:w-52 overflow-hidden rounded-t-lg shadow-sm shadow-gray-400 border-b border-b-gray-500/50">
+      <div className="image-container h-64 w-40 lg:w-60 overflow-hidden rounded-t-lg shadow-sm shadow-gray-400 border-b border-b-gray-500/50">
         <img
           src={products.Image}
           alt={products.Item}
