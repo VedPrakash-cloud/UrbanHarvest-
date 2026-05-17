@@ -24,14 +24,14 @@ export default function ProductPage({ count, onIncrement, onDecrement }) {
   return (
     <>
       <section>
-        <div className="category mt-30 flex gap-2 w-[85%] mx-auto">
+        <div className="category mt-30 flex gap-1 lg:gap-2 w-[85%] mx-auto">
           {["All", "Vegetables", "Fruits", "Dairy", "Herbs"].map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-1.5 rounded-full text-sm font-semibold border cursor-pointer transition ${
                 selectedCategory === category
-                  ? "bg-[#076633] text-white border-[#076633]"
+                  ? "bg-[#076633] text-white  border-[#076633]"
                   : "bg-white text-gray-600 border-gray-300 hover:bg-gray-100"
               }`}
             >

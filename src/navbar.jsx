@@ -1,5 +1,6 @@
 import Logo from "./assets/Urban_logo.png";
-import {RiSearchLine, RiShoppingCart2Line } from "@remixicon/react"
+import RiSearchLine from "@remixicon/react"
+import RiShoppingCart2Line from "@remixicon/react";
 
 export default function Navbar({count}){
     
